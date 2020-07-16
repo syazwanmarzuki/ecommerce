@@ -1,0 +1,75 @@
+<ion-header>
+	<ion-toolbar>
+		<ion-title class="ion-text-center">{{'welcome_to' | translate}}</ion-title>
+	</ion-toolbar>
+</ion-header>
+
+<ion-content>
+	<form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
+		<div class="banner">
+			<div class="logo">
+				<img src="assets/images/user_logo.png">
+			</div>
+		</div>
+		<div class="form">
+			<ion-list lines="none">
+				<ion-item lines="none" >
+					<ion-label mode="md" position="stacked">Email Address</ion-label>
+					<ion-input mode="md" type="email" name="email" required email ngModel #emailCtrl="ngModel" placeholder="Enter Your Email"></ion-input>
+				</ion-item>
+				<ion-item class="item-login" *ngIf="!emailCtrl.value && emailCtrl.touched" lines="none">
+					<ion-badge color="danger">*Email cannot be empty</ion-badge>
+				</ion-item>
+				<ion-item class="item-login" *ngIf="emailCtrl.value && !emailCtrl.valid && emailCtrl.touched" lines="none">
+					<ion-badge color="danger">*Invalid email</ion-badge>
+				</ion-item>
+
+				<ion-item lines="none">
+					<ion-label mode="md" position="stacked">Password</ion-label>
+					<ion-input mode="md" type="password" name="password" required ngModel #passwordCtrl="ngModel" placeholder="Enter Your Password"></ion-input>
+				</ion-item>
+				<ion-item class="item-login" *ngIf="!passwordCtrl.valid && passwordCtrl.touched" lines="none">
+					<ion-badge color="danger">*Password cannot be empty</ion-badge>
+				</ion-item>
+			</ion-list>
+
+			<ion-card *ngIf="!user; else welcome">
+				<ion-card-content>
+				  <ion-button expand="full" (click)="openAppleSignIn()">
+					<ion-icon name="logo-apple" slot="start"></ion-icon>
+					Sign in with Apple
+				  </ion-button>
+				</ion-card-content>
+			  </ion-card>
+			  <ng-template #welcome>
+				<ion-card>
+				  <ion-card-header>
+					<ion-card-title>Welcome back!</ion-card-title>
+				  </ion-card-header>
+				  <ion-card-content>
+					{{ user | json }}
+				  </ion-card-content>
+				</ion-card>
+			  </ng-template>	
+
+			
+
+			<ion-text class="not-member"><h3>Not a member? <a [routerLink]="['/sign-up']">Sign up now!</a></h3></ion-text>
+			<ion-button size="large" [disabled]="!loginForm.valid" type="submit" expand="full" class="btn">Log in</ion-button>
+		</div>
+		
+	</form>
+</ion-content>
+
+<ion-footer class="ion-no-border">
+	<!-- <h2 class="ion-text-center">{{"or_continue_with" | translate}}</h2>
+	<ion-row>
+		<ion-col size="6">
+				<ion-button size="large" expand="full" class="btn facebook" (click)="home()">{{'facebook' | translate}}</ion-button>
+		</ion-col>
+		
+		<ion-col size="6">
+				<ion-button size="large" expand="full" class="btn google" (click)="home()">{{'google' | translate}}</ion-button>
+		</ion-col>
+	</ion-row> -->
+</ion-footer>

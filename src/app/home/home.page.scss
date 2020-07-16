@@ -1,0 +1,234 @@
+ion-header {
+	padding-top: 20px;
+
+	&::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: calc(100% - 50px);
+		background: url(../../assets/images/header.png);
+		background-size: cover;
+		background-repeat: no-repeat;
+		display: block;
+	}
+
+	ion-toolbar {
+		max-width: calc(100% - 28px);
+		margin: 0 auto;
+		border-radius: 8px;
+		min-height: 50px !important;
+		max-height: 50px !important;
+
+
+		ion-title {
+			height: 50px;
+			line-height: 50px;
+			max-height: 50px;
+			padding-right: 11px !important;
+			position: relative !important;
+			top: 0;
+
+			.title_inner {
+				h2 {
+					margin: 0;
+					font-size: .95rem;
+					color: var(--text-dark-primary);
+					font-weight: 400;
+					letter-spacing: 1px;
+					width: 100%;
+					height: 50px;
+					line-height: 50px;
+					position: relative;
+					text-transform: none;
+					text-align: justify;
+				}
+
+				span {
+					&.cart_icon {
+						position: relative;
+						min-width: 27px;
+
+						ion-badge {
+							background: var(--red_color);
+							--background: var(--transparent);
+							--color: var(--white);
+							--padding-bottom: 0;
+							--padding-end: 0;
+							--padding-start: 0;
+							--padding-top: 0;
+							border-radius: 50%;
+							width: 17px;
+							height: 17px;
+							line-height: 17px;
+							display: block;
+							font-size: 0.8rem !important;
+							position: absolute;
+							top: 9px;
+							right: 0;
+							font-weight: 500;
+						}
+
+						ion-icon {
+							position: relative;
+							top: 10px;
+							font-size: 1.5rem;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.category_row {
+		width: 100%;
+		white-space: nowrap;
+		overflow-x: auto;
+		padding: 15px 0 10px 0;
+
+
+		.category {
+			display: inline-block;
+			margin: 0 6px;
+			border-radius: 15px;
+			overflow: hidden;
+
+			.img_box {
+				width: 90px;
+				height: 90px;
+
+				h2 {
+					margin: 0;
+					color: var(--white);
+					text-transform: uppercase;
+					position: relative;
+					z-index: 1;
+					font-size: .65rem;
+					padding: 10px 7px;
+					letter-spacing: .5px;
+					font-weight: 500;
+				}
+			}
+
+			&:first-child {
+				margin-left: 14px;
+			}
+
+			&:last-child {
+				margin-right: 14px;
+			}
+		}
+	}
+
+}
+
+.banner {
+	margin-bottom: 18px;
+
+	ion-slides {
+		ion-slide {
+			.img_box {
+				width: 100%;
+				height: 210px;
+			}
+		}
+	}
+}
+
+.items_container {
+	margin-bottom: 15px;
+
+	h2 {
+		margin: 0;
+		font-size: 1.25rem;
+		font-weight: 600;
+		padding: 0px 15px 15px 15px;
+	}
+
+	.items_row {
+		width: 100%;
+		white-space: nowrap;
+		overflow-x: auto;
+		padding: 0px 0 10px 0;
+
+		.item {
+			display: inline-block;
+			margin: 0 6px;
+			overflow: hidden;
+			width: 147px;
+
+			.item_img {
+				width: 147px;
+				height: 147px;
+				border-radius: 8px;
+			}
+
+			.item_details {
+				padding-top: 12px;
+				width: 100%;
+				overflow: hidden;
+
+				h3 {
+					margin: 0;
+					color: var(--text-dark-primary);
+					font-size: .9rem;
+					font-weight: 500;
+					padding-bottom: 3px;
+					white-space: nowrap;
+					text-overflow: ellipsis;
+					overflow: hidden;
+				}
+
+				h4 {
+					margin: 0;
+					color: var(--text-light);
+					font-weight: 400;
+					font-size: .7rem;
+					padding-bottom: 8px;
+					white-space: nowrap;
+					text-overflow: ellipsis;
+					overflow: hidden;
+
+				}
+
+				h5 {
+					margin: 0;
+					font-size: 1.1rem;
+					color: var(--text-black);
+
+					ion-badge {
+						background: var(--secondary);
+						--background: var(--transparent);
+						--color: var(--white);
+						--padding-bottom: 0;
+						--padding-end: 0;
+						--padding-start: 0;
+						--padding-top: 0;
+						border-radius: 50px;
+						font-weight: 400;
+						font-size: .7rem;
+						min-width: 41px;
+						height: 18px;
+						line-height: 18px;
+
+						ion-icon {
+							font-size: 0.6rem;
+							position: relative;
+							top: 1px;
+						}
+
+					}
+				}
+			}
+
+			&:first-child {
+				margin-left: 14px;
+			}
+
+			&:last-child {
+				margin-right: 14px;
+			}
+		}
+	}
+}

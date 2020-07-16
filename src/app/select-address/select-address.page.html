@@ -1,0 +1,88 @@
+<ion-header class="bg_transparent">
+	<ion-toolbar>
+		<ion-buttons slot="start">
+			<ion-back-button text="" icon="chevron-back-outline"></ion-back-button>
+		</ion-buttons>
+		<ion-title>
+			{{'select_address' | translate}}
+		</ion-title>
+	</ion-toolbar>
+	<div class="order_steps">
+		<ion-row>
+			<ion-col class="active">
+				<ion-icon class="zmdi zmdi-pin"></ion-icon>
+			</ion-col>
+			<ion-col>
+				<h3>
+					<ion-icon class="zmdi zmdi-circle"></ion-icon>
+					<ion-icon class="zmdi zmdi-circle"></ion-icon>
+					<ion-icon class="zmdi zmdi-circle"></ion-icon>
+					<ion-icon class="zmdi zmdi-circle"></ion-icon>
+					<ion-icon class="zmdi zmdi-circle"></ion-icon>
+					<ion-icon class="zmdi zmdi-circle"></ion-icon>
+				</h3>
+			</ion-col>
+			<ion-col>
+				<ion-icon class="zmdi zmdi-card"></ion-icon>
+			</ion-col>
+			<ion-col>
+				<h3>
+					<ion-icon class="zmdi zmdi-circle"></ion-icon>
+					<ion-icon class="zmdi zmdi-circle"></ion-icon>
+					<ion-icon class="zmdi zmdi-circle"></ion-icon>
+					<ion-icon class="zmdi zmdi-circle"></ion-icon>
+					<ion-icon class="zmdi zmdi-circle"></ion-icon>
+					<ion-icon class="zmdi zmdi-circle"></ion-icon>
+				</h3>
+			</ion-col>
+			<ion-col>
+				<ion-icon class="zmdi zmdi-assignment-check"></ion-icon>
+			</ion-col>
+		</ion-row>
+	</div>
+</ion-header>
+
+
+<ion-content fullscreen>
+	<ion-list lines="none">
+		<ion-radio-group>
+			<ion-item>
+				<div class="item_inner d-flex">
+					<ion-radio value="home"></ion-radio>
+					<div class="text_box">
+						<h3>Home</h3>
+						<p>
+							1124, Patestine Street, Jackson Tower, Near City Garden, New York, USA
+						</p>
+					</div>
+				</div>
+			</ion-item>
+			<ion-item>
+				<div class="item_inner d-flex">
+					<ion-radio value="Office"></ion-radio>
+					<div class="text_box">
+						<h3>Office</h3>
+						<p>
+							1124, Patestine Street, Jackson Tower, Near City Garden, New York, USA
+						</p>
+					</div>
+				</div>
+			</ion-item>
+
+			<ion-item>
+				<div class="item_inner d-flex">
+					<ion-radio value="Other"></ion-radio>
+					<div class="text_box">
+						<h3>Other</h3>
+						<p>
+							1124, Patestine Street, Jackson Tower, Near City Garden, New York, USA
+						</p>
+					</div>
+				</div>
+			</ion-item>
+		</ion-radio-group>
+	</ion-list>
+</ion-content>
+<ion-footer class="ion-no-border">
+	<ion-button size="large" shape="full" class="btn" (click)="payment_mode()"> {{'continue' | translate}} </ion-button>
+</ion-footer>

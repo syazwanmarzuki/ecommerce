@@ -1,0 +1,959 @@
+<ion-header>
+	<ion-toolbar>
+		<ion-buttons slot="start">
+			<ion-menu-button></ion-menu-button>
+		</ion-buttons>
+		<ion-title>
+			{{'my_orders' | translate}}
+		</ion-title>
+	</ion-toolbar>
+</ion-header>
+
+<ion-content class="bg_color">
+	<ion-list lines="none">
+		<ion-item [ngClass]="faqExpand1 ? 'active' : '' ">
+			<div class="item_inner">
+				<div class="item_info">
+					<div class="item_header d-flex" (click)="faqExpandToggle1()">
+						<div class="img_box center_img">
+							<img src="assets/images/item_4.png" class="crop_img">
+						</div>
+						<div class="text_box">
+							<h2>Black Cotton Top</h2>
+							<h3>Operum England</h3>
+							<h4 class="d-flex">
+								{{'ordered_on' | translate}} 24 Jun, 11:40
+								<span class="end">
+									{{'order_id' | translate}} 224154
+								</span>
+							</h4>
+						</div>
+					</div>
+					<div class="detail d-flex">
+						<div class="text_box payment" (click)="faqExpandToggle1()">
+							<h2>{{'payment' | translate}}</h2>
+							<h3>$30.50</h3>
+						</div>
+						<div class="text_box payment_mode" (click)="faqExpandToggle1()">
+							<h2>{{'payment_mode' | translate}}</h2>
+							<h3>Cash On Delivery</h3>
+						</div>
+						<div class="text_box order_status end">
+							<h2>{{'order_status' | translate}}</h2>
+							<h3>{{'dispatched' | translate}}</h3>
+						</div>
+					</div>
+				</div>
+
+				<ion-card (click)="faqExpandToggle1()">
+					<div class="card_header">
+						<ion-row>
+							<ion-col class="active">
+								<div class="icon_box">
+									<ion-icon class="zmdi zmdi-check-all ion-text-center"></ion-icon>
+								</div>
+								<p class="ion-text-center">{{'placed' | translate}}</p>
+							</ion-col>
+							<ion-col class="active">
+								<div class="icon_box">
+									<ion-icon class="zmdi zmdi-assignment-returned ion-text-center"></ion-icon>
+								</div>
+								<p class="ion-text-center">{{'packing' | translate}}</p>
+							</ion-col>
+							<ion-col class="active">
+								<div class="icon_box">
+									<ion-icon class="zmdi zmdi-bike ion-text-center"></ion-icon>
+								</div>
+								<p class="ion-text-center">{{'dispatched' | translate}}</p>
+							</ion-col>
+							<ion-col class="active">
+								<div class="icon_box">
+									<ion-icon class="zmdi zmdi-navigation ion-text-center"></ion-icon>
+								</div>
+								<p class="ion-text-center">{{'track' | translate}}</p>
+							</ion-col>
+							<ion-col>
+								<div class="icon_box">
+									<ion-icon class="zmdi zmdi-home ion-text-center"></ion-icon>
+								</div>
+								<p class="ion-text-center">{{'delivered' | translate}}</p>
+							</ion-col>
+						</ion-row>
+					</div>
+
+					<div class="ordered_items">
+						<h2>{{'ordered_items' | translate}}</h2>
+						<h3 class="d-flex">Black Cotton Top <span class="end">$28.00</span></h3>
+						<h2>{{'qnt' | translate}}. 1</h2>
+					</div>
+
+					<div class="payment_details">
+						<h3 class="d-flex">{{'delivery_fee' | translate}} <span class="end">$8.00</span></h3>
+						<h3 class="d-flex">{{'promocode' | translate}} <span class="end">- $2.00</span></h3>
+						<h2 class="d-flex">{{'amount_to_pay' | translate}} <span class="end">$30.50</span></h2>
+					</div>
+				</ion-card>
+			</div>
+		</ion-item>
+
+		<ion-item [ngClass]="faqExpand2 ? 'active' : '' ">
+			<div class="item_inner">
+				<div class="item_info">
+					<div class="item_header d-flex" (click)="faqExpandToggle2()">
+						<div class="img_box center_img">
+							<img src="assets/images/item_7.png" class="crop_img">
+						</div>
+						<div class="text_box">
+							<h2> High Tech Hair Dryer</h2>
+							<h3>Jonathon Techs</h3>
+							<h4 class="d-flex">
+								{{'ordered_on' | translate}} 24 Jun, 11:40
+								<span class="end">
+									{{'order_id' | translate}} 224154
+								</span>
+							</h4>
+						</div>
+					</div>
+					<div class="detail d-flex">
+						<div class="text_box payment" (click)="faqExpandToggle2()">
+							<h2>{{'payment' | translate}}</h2>
+							<h3>$30.50</h3>
+						</div>
+						<div class="text_box payment_mode" (click)="faqExpandToggle2()">
+							<h2>{{'payment_mode' | translate}}</h2>
+							<h3>Cash On Delivery</h3>
+						</div>
+						<div class="text_box order_status end" (click)="add_review()">
+							<h2>{{'order_status' | translate}}</h2>
+							<h3>{{'review_now' | translate}}</h3>
+						</div>
+					</div>
+				</div>
+
+				<ion-card (click)="faqExpandToggle2()">
+					<div class="card_header">
+						<ion-row>
+							<ion-col class="active">
+								<div class="icon_box">
+									<ion-icon class="zmdi zmdi-check-all ion-text-center"></ion-icon>
+								</div>
+								<p class="ion-text-center">{{'placed' | translate}}</p>
+							</ion-col>
+							<ion-col class="active">
+								<div class="icon_box">
+									<ion-icon class="zmdi zmdi-assignment-returned ion-text-center"></ion-icon>
+								</div>
+								<p class="ion-text-center">{{'packing' | translate}}</p>
+							</ion-col>
+							<ion-col class="active">
+								<div class="icon_box">
+									<ion-icon class="zmdi zmdi-bike ion-text-center"></ion-icon>
+								</div>
+								<p class="ion-text-center">{{'dispatched' | translate}}</p>
+							</ion-col>
+							<ion-col class="active">
+								<div class="icon_box">
+									<ion-icon class="zmdi zmdi-navigation ion-text-center"></ion-icon>
+								</div>
+								<p class="ion-text-center">{{'track' | translate}}</p>
+							</ion-col>
+							<ion-col class="active">
+								<div class="icon_box">
+									<ion-icon class="zmdi zmdi-home ion-text-center"></ion-icon>
+								</div>
+								<p class="ion-text-center">{{'delivered' | translate}}</p>
+							</ion-col>
+						</ion-row>
+					</div>
+
+					<div class="ordered_items">
+						<h2>{{'ordered_items' | translate}}</h2>
+						<h3 class="d-flex">High Tech Hair Drye <span class="end">$28.00</span></h3>
+						<h2>{{'qnt' | translate}}. 1</h2>
+					</div>
+
+					<div class="payment_details">
+						<h3 class="d-flex">{{'delivery_fee' | translate}} <span class="end">$8.00</span></h3>
+						<h3 class="d-flex">{{'promocode' | translate}} <span class="end">- $2.00</span></h3>
+						<h2 class="d-flex">{{'amount_to_pay' | translate}} <span class="end">$30.50</span></h2>
+					</div>
+				</ion-card>
+			</div>
+		</ion-item>
+
+
+		<ion-item [ngClass]="faqExpand3 ? 'active' : '' ">
+			<div class="item_inner">
+				<div class="item_info">
+					<div class="item_header d-flex" (click)="faqExpandToggle3()">
+						<div class="img_box center_img">
+							<img src="assets/images/item3.png" class="crop_img">
+						</div>
+						<div class="text_box">
+							<h2>Sumer Full Sleve Tshirt</h2>
+							<h3>Jonathon Techs</h3>
+							<h4 class="d-flex">
+								{{'ordered_on' | translate}} 23 Jun, 11:40
+								<span class="end">
+									{{'order_id' | translate}} 224154
+								</span>
+							</h4>
+						</div>
+					</div>
+					<div class="detail d-flex">
+						<div class="text_box payment" (click)="faqExpandToggle3()">
+							<h2>{{'payment' | translate}}</h2>
+							<h3>$30.50</h3>
+						</div>
+						<div class="text_box payment_mode" (click)="faqExpandToggle3()">
+							<h2>{{'payment_mode' | translate}}</h2>
+							<h3>Cash On Delivery</h3>
+						</div>
+						<div class="text_box order_status end" (click)="add_review()">
+							<h2>{{'order_status' | translate}}</h2>
+							<h3>{{'review_now' | translate}}</h3>
+						</div>
+					</div>
+				</div>
+
+				<ion-card (click)="faqExpandToggle3()">
+					<div class="card_header">
+						<ion-row>
+							<ion-col class="active">
+								<div class="icon_box">
+									<ion-icon class="zmdi zmdi-check-all ion-text-center"></ion-icon>
+								</div>
+								<p class="ion-text-center">{{'placed' | translate}}</p>
+							</ion-col>
+							<ion-col class="active">
+								<div class="icon_box">
+									<ion-icon class="zmdi zmdi-assignment-returned ion-text-center"></ion-icon>
+								</div>
+								<p class="ion-text-center">{{'packing' | translate}}</p>
+							</ion-col>
+							<ion-col class="active">
+								<div class="icon_box">
+									<ion-icon class="zmdi zmdi-bike ion-text-center"></ion-icon>
+								</div>
+								<p class="ion-text-center">{{'dispatched' | translate}}</p>
+							</ion-col>
+							<ion-col class="active">
+								<div class="icon_box">
+									<ion-icon class="zmdi zmdi-navigation ion-text-center"></ion-icon>
+								</div>
+								<p class="ion-text-center">{{'track' | translate}}</p>
+							</ion-col>
+							<ion-col class="active">
+								<div class="icon_box">
+									<ion-icon class="zmdi zmdi-home ion-text-center"></ion-icon>
+								</div>
+								<p class="ion-text-center">{{'delivered' | translate}}</p>
+							</ion-col>
+						</ion-row>
+					</div>
+
+					<div class="ordered_items">
+						<h2>{{'ordered_items' | translate}}</h2>
+						<h3 class="d-flex">Sumer Full Sleve Tshirt<span class="end">$28.00</span></h3>
+						<h2>{{'qnt' | translate}}. 1</h2>
+					</div>
+
+					<div class="payment_details">
+						<h3 class="d-flex">{{'delivery_fee' | translate}} <span class="end">$8.00</span></h3>
+						<h3 class="d-flex">{{'promocode' | translate}} <span class="end">- $2.00</span></h3>
+						<h2 class="d-flex">{{'amount_to_pay' | translate}} <span class="end">$30.50</span></h2>
+					</div>
+				</ion-card>
+			</div>
+		</ion-item>
+
+
+		<ion-item [ngClass]="faqExpand4 ? 'active' : '' ">
+			<div class="item_inner">
+				<div class="item_info">
+					<div class="item_header d-flex" (click)="faqExpandToggle4()">
+						<div class="img_box center_img">
+							<img src="assets/images/item_7.png" class="crop_img">
+						</div>
+						<div class="text_box">
+							<h2> High Tech Hair Dryer</h2>
+							<h3>Jonathon Techs</h3>
+							<h4 class="d-flex">
+								{{'ordered_on' | translate}} 24 Jun, 11:40
+								<span class="end">
+									{{'order_id' | translate}} 224154
+								</span>
+							</h4>
+						</div>
+					</div>
+					<div class="detail d-flex">
+						<div class="text_box payment" (click)="faqExpandToggle4()">
+							<h2>{{'payment' | translate}}</h2>
+							<h3>$30.50</h3>
+						</div>
+						<div class="text_box payment_mode" (click)="faqExpandToggle4()">
+							<h2>{{'payment_mode' | translate}}</h2>
+							<h3>Cash On Delivery</h3>
+						</div>
+						<div class="text_box order_status end" (click)="add_review()">
+							<h2>{{'order_status' | translate}}</h2>
+							<h3>{{'review_now' | translate}}</h3>
+						</div>
+					</div>
+				</div>
+
+				<ion-card (click)="faqExpandToggle4()">
+					<div class="card_header">
+						<ion-row>
+							<ion-col class="active">
+								<div class="icon_box">
+									<ion-icon class="zmdi zmdi-check-all ion-text-center"></ion-icon>
+								</div>
+								<p class="ion-text-center">{{'placed' | translate}}</p>
+							</ion-col>
+							<ion-col class="active">
+								<div class="icon_box">
+									<ion-icon class="zmdi zmdi-assignment-returned ion-text-center"></ion-icon>
+								</div>
+								<p class="ion-text-center">{{'packing' | translate}}</p>
+							</ion-col>
+							<ion-col class="active">
+								<div class="icon_box">
+									<ion-icon class="zmdi zmdi-bike ion-text-center"></ion-icon>
+								</div>
+								<p class="ion-text-center">{{'dispatched' | translate}}</p>
+							</ion-col>
+							<ion-col class="active">
+								<div class="icon_box">
+									<ion-icon class="zmdi zmdi-navigation ion-text-center"></ion-icon>
+								</div>
+								<p class="ion-text-center">{{'track' | translate}}</p>
+							</ion-col>
+							<ion-col class="active">
+								<div class="icon_box">
+									<ion-icon class="zmdi zmdi-home ion-text-center"></ion-icon>
+								</div>
+								<p class="ion-text-center">{{'delivered' | translate}}</p>
+							</ion-col>
+						</ion-row>
+					</div>
+
+					<div class="ordered_items">
+						<h2>{{'ordered_items' | translate}}</h2>
+						<h3 class="d-flex">High Tech Hair Drye <span class="end">$28.00</span></h3>
+						<h2>{{'qnt' | translate}}. 1</h2>
+					</div>
+
+					<div class="payment_details">
+						<h3 class="d-flex">{{'delivery_fee' | translate}} <span class="end">$8.00</span></h3>
+						<h3 class="d-flex">{{'promocode' | translate}} <span class="end">- $2.00</span></h3>
+						<h2 class="d-flex">{{'amount_to_pay' | translate}} <span class="end">$30.50</span></h2>
+					</div>
+				</ion-card>
+			</div>
+		</ion-item>
+
+
+		<ion-item [ngClass]="faqExpand5 ? 'active' : '' ">
+			<div class="item_inner">
+				<div class="item_info">
+					<div class="item_header d-flex" (click)="faqExpandToggle5()">
+						<div class="img_box center_img">
+							<img src="assets/images/item3.png" class="crop_img">
+						</div>
+						<div class="text_box">
+							<h2>Sumer Full Sleve Tshirt</h2>
+							<h3>Jonathon Techs</h3>
+							<h4 class="d-flex">
+								{{'ordered_on' | translate}} 23 Jun, 11:40
+								<span class="end">
+									{{'order_id' | translate}} 224154
+								</span>
+							</h4>
+						</div>
+					</div>
+					<div class="detail d-flex">
+						<div class="text_box payment" (click)="faqExpandToggle5()">
+							<h2>{{'payment' | translate}}</h2>
+							<h3>$30.50</h3>
+						</div>
+						<div class="text_box payment_mode" (click)="faqExpandToggle5()">
+							<h2>{{'payment_mode' | translate}}</h2>
+							<h3>Cash On Delivery</h3>
+						</div>
+						<div class="text_box order_status end" (click)="add_review()">
+							<h2>{{'order_status' | translate}}</h2>
+							<h3>{{'review_now' | translate}}</h3>
+						</div>
+					</div>
+				</div>
+
+				<ion-card (click)="faqExpandToggle5()">
+					<div class="card_header">
+						<ion-row>
+							<ion-col class="active">
+								<div class="icon_box">
+									<ion-icon class="zmdi zmdi-check-all ion-text-center"></ion-icon>
+								</div>
+								<p class="ion-text-center">{{'placed' | translate}}</p>
+							</ion-col>
+							<ion-col class="active">
+								<div class="icon_box">
+									<ion-icon class="zmdi zmdi-assignment-returned ion-text-center"></ion-icon>
+								</div>
+								<p class="ion-text-center">{{'packing' | translate}}</p>
+							</ion-col>
+							<ion-col class="active">
+								<div class="icon_box">
+									<ion-icon class="zmdi zmdi-bike ion-text-center"></ion-icon>
+								</div>
+								<p class="ion-text-center">{{'dispatched' | translate}}</p>
+							</ion-col>
+							<ion-col class="active">
+								<div class="icon_box">
+									<ion-icon class="zmdi zmdi-navigation ion-text-center"></ion-icon>
+								</div>
+								<p class="ion-text-center">{{'track' | translate}}</p>
+							</ion-col>
+							<ion-col class="active">
+								<div class="icon_box">
+									<ion-icon class="zmdi zmdi-home ion-text-center"></ion-icon>
+								</div>
+								<p class="ion-text-center">{{'delivered' | translate}}</p>
+							</ion-col>
+						</ion-row>
+					</div>
+
+					<div class="ordered_items">
+						<h2>{{'ordered_items' | translate}}</h2>
+						<h3 class="d-flex">Sumer Full Sleve Tshirt<span class="end">$28.00</span></h3>
+						<h2>{{'qnt' | translate}}. 1</h2>
+					</div>
+
+					<div class="payment_details">
+						<h3 class="d-flex">{{'delivery_fee' | translate}} <span class="end">$8.00</span></h3>
+						<h3 class="d-flex">{{'promocode' | translate}} <span class="end">- $2.00</span></h3>
+						<h2 class="d-flex">{{'amount_to_pay' | translate}} <span class="end">$30.50</span></h2>
+					</div>
+				</ion-card>
+			</div>
+		</ion-item>
+
+
+		<ion-item [ngClass]="faqExpand6 ? 'active' : '' ">
+			<div class="item_inner">
+				<div class="item_info">
+					<div class="item_header d-flex" (click)="faqExpandToggle6()">
+						<div class="img_box center_img">
+							<img src="assets/images/item_7.png" class="crop_img">
+						</div>
+						<div class="text_box">
+							<h2> High Tech Hair Dryer</h2>
+							<h3>Jonathon Techs</h3>
+							<h4 class="d-flex">
+								{{'ordered_on' | translate}} 24 Jun, 11:40
+								<span class="end">
+									{{'order_id' | translate}} 224154
+								</span>
+							</h4>
+						</div>
+					</div>
+					<div class="detail d-flex">
+						<div class="text_box payment" (click)="faqExpandToggle6()">
+							<h2>{{'payment' | translate}}</h2>
+							<h3>$30.50</h3>
+						</div>
+						<div class="text_box payment_mode" (click)="faqExpandToggle6()">
+							<h2>{{'payment_mode' | translate}}</h2>
+							<h3>Cash On Delivery</h3>
+						</div>
+						<div class="text_box order_status end" (click)="add_review()">
+							<h2>{{'order_status' | translate}}</h2>
+							<h3>{{'review_now' | translate}}</h3>
+						</div>
+					</div>
+				</div>
+
+				<ion-card (click)="faqExpandToggle6()">
+					<div class="card_header">
+						<ion-row>
+							<ion-col class="active">
+								<div class="icon_box">
+									<ion-icon class="zmdi zmdi-check-all ion-text-center"></ion-icon>
+								</div>
+								<p class="ion-text-center">{{'placed' | translate}}</p>
+							</ion-col>
+							<ion-col class="active">
+								<div class="icon_box">
+									<ion-icon class="zmdi zmdi-assignment-returned ion-text-center"></ion-icon>
+								</div>
+								<p class="ion-text-center">{{'packing' | translate}}</p>
+							</ion-col>
+							<ion-col class="active">
+								<div class="icon_box">
+									<ion-icon class="zmdi zmdi-bike ion-text-center"></ion-icon>
+								</div>
+								<p class="ion-text-center">{{'dispatched' | translate}}</p>
+							</ion-col>
+							<ion-col class="active">
+								<div class="icon_box">
+									<ion-icon class="zmdi zmdi-navigation ion-text-center"></ion-icon>
+								</div>
+								<p class="ion-text-center">{{'track' | translate}}</p>
+							</ion-col>
+							<ion-col class="active">
+								<div class="icon_box">
+									<ion-icon class="zmdi zmdi-home ion-text-center"></ion-icon>
+								</div>
+								<p class="ion-text-center">{{'delivered' | translate}}</p>
+							</ion-col>
+						</ion-row>
+					</div>
+
+					<div class="ordered_items">
+						<h2>{{'ordered_items' | translate}}</h2>
+						<h3 class="d-flex">High Tech Hair Drye <span class="end">$28.00</span></h3>
+						<h2>{{'qnt' | translate}}. 1</h2>
+					</div>
+
+					<div class="payment_details">
+						<h3 class="d-flex">{{'delivery_fee' | translate}} <span class="end">$8.00</span></h3>
+						<h3 class="d-flex">{{'promocode' | translate}} <span class="end">- $2.00</span></h3>
+						<h2 class="d-flex">{{'amount_to_pay' | translate}} <span class="end">$30.50</span></h2>
+					</div>
+				</ion-card>
+			</div>
+		</ion-item>
+
+
+		<ion-item [ngClass]="faqExpand7 ? 'active' : '' ">
+			<div class="item_inner">
+				<div class="item_info">
+					<div class="item_header d-flex" (click)="faqExpandToggle7()">
+						<div class="img_box center_img">
+							<img src="assets/images/item3.png" class="crop_img">
+						</div>
+						<div class="text_box">
+							<h2>Sumer Full Sleve Tshirt</h2>
+							<h3>Jonathon Techs</h3>
+							<h4 class="d-flex">
+								{{'ordered_on' | translate}} 23 Jun, 11:40
+								<span class="end">
+									{{'order_id' | translate}} 224154
+								</span>
+							</h4>
+						</div>
+					</div>
+					<div class="detail d-flex">
+						<div class="text_box payment" (click)="faqExpandToggle7()">
+							<h2>{{'payment' | translate}}</h2>
+							<h3>$30.50</h3>
+						</div>
+						<div class="text_box payment_mode" (click)="faqExpandToggle7()">
+							<h2>{{'payment_mode' | translate}}</h2>
+							<h3>Cash On Delivery</h3>
+						</div>
+						<div class="text_box order_status end" (click)="add_review()">
+							<h2>{{'order_status' | translate}}</h2>
+							<h3>{{'review_now' | translate}}</h3>
+						</div>
+					</div>
+				</div>
+
+				<ion-card (click)="faqExpandToggle7()">
+					<div class="card_header">
+						<ion-row>
+							<ion-col class="active">
+								<div class="icon_box">
+									<ion-icon class="zmdi zmdi-check-all ion-text-center"></ion-icon>
+								</div>
+								<p class="ion-text-center">{{'placed' | translate}}</p>
+							</ion-col>
+							<ion-col class="active">
+								<div class="icon_box">
+									<ion-icon class="zmdi zmdi-assignment-returned ion-text-center"></ion-icon>
+								</div>
+								<p class="ion-text-center">{{'packing' | translate}}</p>
+							</ion-col>
+							<ion-col class="active">
+								<div class="icon_box">
+									<ion-icon class="zmdi zmdi-bike ion-text-center"></ion-icon>
+								</div>
+								<p class="ion-text-center">{{'dispatched' | translate}}</p>
+							</ion-col>
+							<ion-col class="active">
+								<div class="icon_box">
+									<ion-icon class="zmdi zmdi-navigation ion-text-center"></ion-icon>
+								</div>
+								<p class="ion-text-center">{{'track' | translate}}</p>
+							</ion-col>
+							<ion-col class="active">
+								<div class="icon_box">
+									<ion-icon class="zmdi zmdi-home ion-text-center"></ion-icon>
+								</div>
+								<p class="ion-text-center">{{'delivered' | translate}}</p>
+							</ion-col>
+						</ion-row>
+					</div>
+
+					<div class="ordered_items">
+						<h2>{{'ordered_items' | translate}}</h2>
+						<h3 class="d-flex">Sumer Full Sleve Tshirt<span class="end">$28.00</span></h3>
+						<h2>{{'qnt' | translate}}. 1</h2>
+					</div>
+
+					<div class="payment_details">
+						<h3 class="d-flex">{{'delivery_fee' | translate}} <span class="end">$8.00</span></h3>
+						<h3 class="d-flex">{{'promocode' | translate}} <span class="end">- $2.00</span></h3>
+						<h2 class="d-flex">{{'amount_to_pay' | translate}} <span class="end">$30.50</span></h2>
+					</div>
+				</ion-card>
+			</div>
+		</ion-item>
+
+
+
+		<ion-item [ngClass]="faqExpand8 ? 'active' : '' ">
+			<div class="item_inner">
+				<div class="item_info">
+					<div class="item_header d-flex" (click)="faqExpandToggle8()">
+						<div class="img_box center_img">
+							<img src="assets/images/item_7.png" class="crop_img">
+						</div>
+						<div class="text_box">
+							<h2> High Tech Hair Dryer</h2>
+							<h3>Jonathon Techs</h3>
+							<h4 class="d-flex">
+								{{'ordered_on' | translate}} 24 Jun, 11:40
+								<span class="end">
+									{{'order_id' | translate}} 224154
+								</span>
+							</h4>
+						</div>
+					</div>
+					<div class="detail d-flex">
+						<div class="text_box payment" (click)="faqExpandToggle8()">
+							<h2>{{'payment' | translate}}</h2>
+							<h3>$30.50</h3>
+						</div>
+						<div class="text_box payment_mode" (click)="faqExpandToggle8()">
+							<h2>{{'payment_mode' | translate}}</h2>
+							<h3>Cash On Delivery</h3>
+						</div>
+						<div class="text_box order_status end" (click)="add_review()">
+							<h2>{{'order_status' | translate}}</h2>
+							<h3>{{'review_now' | translate}}</h3>
+						</div>
+					</div>
+				</div>
+
+				<ion-card (click)="faqExpandToggle8()">
+					<div class="card_header">
+						<ion-row>
+							<ion-col class="active">
+								<div class="icon_box">
+									<ion-icon class="zmdi zmdi-check-all ion-text-center"></ion-icon>
+								</div>
+								<p class="ion-text-center">{{'placed' | translate}}</p>
+							</ion-col>
+							<ion-col class="active">
+								<div class="icon_box">
+									<ion-icon class="zmdi zmdi-assignment-returned ion-text-center"></ion-icon>
+								</div>
+								<p class="ion-text-center">{{'packing' | translate}}</p>
+							</ion-col>
+							<ion-col class="active">
+								<div class="icon_box">
+									<ion-icon class="zmdi zmdi-bike ion-text-center"></ion-icon>
+								</div>
+								<p class="ion-text-center">{{'dispatched' | translate}}</p>
+							</ion-col>
+							<ion-col class="active">
+								<div class="icon_box">
+									<ion-icon class="zmdi zmdi-navigation ion-text-center"></ion-icon>
+								</div>
+								<p class="ion-text-center">{{'track' | translate}}</p>
+							</ion-col>
+							<ion-col class="active">
+								<div class="icon_box">
+									<ion-icon class="zmdi zmdi-home ion-text-center"></ion-icon>
+								</div>
+								<p class="ion-text-center">{{'delivered' | translate}}</p>
+							</ion-col>
+						</ion-row>
+					</div>
+
+					<div class="ordered_items">
+						<h2>{{'ordered_items' | translate}}</h2>
+						<h3 class="d-flex">High Tech Hair Drye <span class="end">$28.00</span></h3>
+						<h2>{{'qnt' | translate}}. 1</h2>
+					</div>
+
+					<div class="payment_details">
+						<h3 class="d-flex">{{'delivery_fee' | translate}} <span class="end">$8.00</span></h3>
+						<h3 class="d-flex">{{'promocode' | translate}} <span class="end">- $2.00</span></h3>
+						<h2 class="d-flex">{{'amount_to_pay' | translate}} <span class="end">$30.50</span></h2>
+					</div>
+				</ion-card>
+			</div>
+		</ion-item>
+
+
+		<ion-item [ngClass]="faqExpand9 ? 'active' : '' ">
+			<div class="item_inner">
+				<div class="item_info">
+					<div class="item_header d-flex" (click)="faqExpandToggle10()">
+						<div class="img_box center_img">
+							<img src="assets/images/item3.png" class="crop_img">
+						</div>
+						<div class="text_box">
+							<h2>Sumer Full Sleve Tshirt</h2>
+							<h3>Jonathon Techs</h3>
+							<h4 class="d-flex">
+								{{'ordered_on' | translate}} 23 Jun, 11:40
+								<span class="end">
+									{{'order_id' | translate}} 224154
+								</span>
+							</h4>
+						</div>
+					</div>
+					<div class="detail d-flex">
+						<div class="text_box payment" (click)="faqExpandToggle10()">
+							<h2>{{'payment' | translate}}</h2>
+							<h3>$30.50</h3>
+						</div>
+						<div class="text_box payment_mode" (click)="faqExpandToggle10()">
+							<h2>{{'payment_mode' | translate}}</h2>
+							<h3>Cash On Delivery</h3>
+						</div>
+						<div class="text_box order_status end" (click)="add_review()">
+							<h2>{{'order_status' | translate}}</h2>
+							<h3>{{'review_now' | translate}}</h3>
+						</div>
+					</div>
+				</div>
+
+				<ion-card (click)="faqExpandToggle10()">
+					<div class="card_header">
+						<ion-row>
+							<ion-col class="active">
+								<div class="icon_box">
+									<ion-icon class="zmdi zmdi-check-all ion-text-center"></ion-icon>
+								</div>
+								<p class="ion-text-center">{{'placed' | translate}}</p>
+							</ion-col>
+							<ion-col class="active">
+								<div class="icon_box">
+									<ion-icon class="zmdi zmdi-assignment-returned ion-text-center"></ion-icon>
+								</div>
+								<p class="ion-text-center">{{'packing' | translate}}</p>
+							</ion-col>
+							<ion-col class="active">
+								<div class="icon_box">
+									<ion-icon class="zmdi zmdi-bike ion-text-center"></ion-icon>
+								</div>
+								<p class="ion-text-center">{{'dispatched' | translate}}</p>
+							</ion-col>
+							<ion-col class="active">
+								<div class="icon_box">
+									<ion-icon class="zmdi zmdi-navigation ion-text-center"></ion-icon>
+								</div>
+								<p class="ion-text-center">{{'track' | translate}}</p>
+							</ion-col>
+							<ion-col class="active">
+								<div class="icon_box">
+									<ion-icon class="zmdi zmdi-home ion-text-center"></ion-icon>
+								</div>
+								<p class="ion-text-center">{{'delivered' | translate}}</p>
+							</ion-col>
+						</ion-row>
+					</div>
+
+					<div class="ordered_items">
+						<h2>{{'ordered_items' | translate}}</h2>
+						<h3 class="d-flex">Sumer Full Sleve Tshirt<span class="end">$28.00</span></h3>
+						<h2>{{'qnt' | translate}}. 1</h2>
+					</div>
+
+					<div class="payment_details">
+						<h3 class="d-flex">{{'delivery_fee' | translate}} <span class="end">$8.00</span></h3>
+						<h3 class="d-flex">{{'promocode' | translate}} <span class="end">- $2.00</span></h3>
+						<h2 class="d-flex">{{'amount_to_pay' | translate}} <span class="end">$30.50</span></h2>
+					</div>
+				</ion-card>
+			</div>
+		</ion-item>
+
+
+		<ion-item [ngClass]="faqExpand11 ? 'active' : '' ">
+			<div class="item_inner">
+				<div class="item_info">
+					<div class="item_header d-flex" (click)="faqExpandToggle11()">
+						<div class="img_box center_img">
+							<img src="assets/images/item_7.png" class="crop_img">
+						</div>
+						<div class="text_box">
+							<h2> High Tech Hair Dryer</h2>
+							<h3>Jonathon Techs</h3>
+							<h4 class="d-flex">
+								{{'ordered_on' | translate}} 24 Jun, 11:40
+								<span class="end">
+									{{'order_id' | translate}} 224154
+								</span>
+							</h4>
+						</div>
+					</div>
+					<div class="detail d-flex">
+						<div class="text_box payment" (click)="faqExpandToggle11()">
+							<h2>{{'payment' | translate}}</h2>
+							<h3>$30.50</h3>
+						</div>
+						<div class="text_box payment_mode" (click)="faqExpandToggle11()">
+							<h2>{{'payment_mode' | translate}}</h2>
+							<h3>Cash On Delivery</h3>
+						</div>
+						<div class="text_box order_status end" (click)="add_review()">
+							<h2>{{'order_status' | translate}}</h2>
+							<h3>{{'review_now' | translate}}</h3>
+						</div>
+					</div>
+				</div>
+
+				<ion-card (click)="faqExpandToggle11()">
+					<div class="card_header">
+						<ion-row>
+							<ion-col class="active">
+								<div class="icon_box">
+									<ion-icon class="zmdi zmdi-check-all ion-text-center"></ion-icon>
+								</div>
+								<p class="ion-text-center">{{'placed' | translate}}</p>
+							</ion-col>
+							<ion-col class="active">
+								<div class="icon_box">
+									<ion-icon class="zmdi zmdi-assignment-returned ion-text-center"></ion-icon>
+								</div>
+								<p class="ion-text-center">{{'packing' | translate}}</p>
+							</ion-col>
+							<ion-col class="active">
+								<div class="icon_box">
+									<ion-icon class="zmdi zmdi-bike ion-text-center"></ion-icon>
+								</div>
+								<p class="ion-text-center">{{'dispatched' | translate}}</p>
+							</ion-col>
+							<ion-col class="active">
+								<div class="icon_box">
+									<ion-icon class="zmdi zmdi-navigation ion-text-center"></ion-icon>
+								</div>
+								<p class="ion-text-center">{{'track' | translate}}</p>
+							</ion-col>
+							<ion-col class="active">
+								<div class="icon_box">
+									<ion-icon class="zmdi zmdi-home ion-text-center"></ion-icon>
+								</div>
+								<p class="ion-text-center">{{'delivered' | translate}}</p>
+							</ion-col>
+						</ion-row>
+					</div>
+
+					<div class="ordered_items">
+						<h2>{{'ordered_items' | translate}}</h2>
+						<h3 class="d-flex">High Tech Hair Drye <span class="end">$28.00</span></h3>
+						<h2>{{'qnt' | translate}}. 1</h2>
+					</div>
+
+					<div class="payment_details">
+						<h3 class="d-flex">{{'delivery_fee' | translate}} <span class="end">$8.00</span></h3>
+						<h3 class="d-flex">{{'promocode' | translate}} <span class="end">- $2.00</span></h3>
+						<h2 class="d-flex">{{'amount_to_pay' | translate}} <span class="end">$30.50</span></h2>
+					</div>
+				</ion-card>
+			</div>
+		</ion-item>
+
+
+		<ion-item [ngClass]="faqExpand12 ? 'active' : '' ">
+			<div class="item_inner">
+				<div class="item_info">
+					<div class="item_header d-flex" (click)="faqExpandToggle12()">
+						<div class="img_box center_img">
+							<img src="assets/images/item3.png" class="crop_img">
+						</div>
+						<div class="text_box">
+							<h2>Sumer Full Sleve Tshirt</h2>
+							<h3>Jonathon Techs</h3>
+							<h4 class="d-flex">
+								{{'ordered_on' | translate}} 23 Jun, 11:40
+								<span class="end">
+									{{'order_id' | translate}} 224154
+								</span>
+							</h4>
+						</div>
+					</div>
+					<div class="detail d-flex">
+						<div class="text_box payment" (click)="faqExpandToggle12()">
+							<h2>{{'payment' | translate}}</h2>
+							<h3>$30.50</h3>
+						</div>
+						<div class="text_box payment_mode" (click)="faqExpandToggle12()">
+							<h2>{{'payment_mode' | translate}}</h2>
+							<h3>Cash On Delivery</h3>
+						</div>
+						<div class="text_box order_status end" (click)="add_review()">
+							<h2>{{'order_status' | translate}}</h2>
+							<h3>{{'review_now' | translate}}</h3>
+						</div>
+					</div>
+				</div>
+
+				<ion-card (click)="faqExpandToggle12()">
+					<div class="card_header">
+						<ion-row>
+							<ion-col class="active">
+								<div class="icon_box">
+									<ion-icon class="zmdi zmdi-check-all ion-text-center"></ion-icon>
+								</div>
+								<p class="ion-text-center">{{'placed' | translate}}</p>
+							</ion-col>
+							<ion-col class="active">
+								<div class="icon_box">
+									<ion-icon class="zmdi zmdi-assignment-returned ion-text-center"></ion-icon>
+								</div>
+								<p class="ion-text-center">{{'packing' | translate}}</p>
+							</ion-col>
+							<ion-col class="active">
+								<div class="icon_box">
+									<ion-icon class="zmdi zmdi-bike ion-text-center"></ion-icon>
+								</div>
+								<p class="ion-text-center">{{'dispatched' | translate}}</p>
+							</ion-col>
+							<ion-col class="active">
+								<div class="icon_box">
+									<ion-icon class="zmdi zmdi-navigation ion-text-center"></ion-icon>
+								</div>
+								<p class="ion-text-center">{{'track' | translate}}</p>
+							</ion-col>
+							<ion-col class="active">
+								<div class="icon_box">
+									<ion-icon class="zmdi zmdi-home ion-text-center"></ion-icon>
+								</div>
+								<p class="ion-text-center">{{'delivered' | translate}}</p>
+							</ion-col>
+						</ion-row>
+					</div>
+
+					<div class="ordered_items">
+						<h2>{{'ordered_items' | translate}}</h2>
+						<h3 class="d-flex">Sumer Full Sleve Tshirt<span class="end">$28.00</span></h3>
+						<h2>{{'qnt' | translate}}. 1</h2>
+					</div>
+
+					<div class="payment_details">
+						<h3 class="d-flex">{{'delivery_fee' | translate}} <span class="end">$8.00</span></h3>
+						<h3 class="d-flex">{{'promocode' | translate}} <span class="end">- $2.00</span></h3>
+						<h2 class="d-flex">{{'amount_to_pay' | translate}} <span class="end">$30.50</span></h2>
+					</div>
+				</ion-card>
+			</div>
+		</ion-item>
+	</ion-list>
+</ion-content>

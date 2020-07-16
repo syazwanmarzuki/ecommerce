@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Oops..</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size-md="12" offset-md="0" size-sm="6" offset-sm="3">
+        
+        <div>
+          <ion-img src="../../assets/icon/no-wifi.png"></ion-img>
+        </div>
+
+        <div class="ion-text-center error-message-div">
+          <h1>Ooops!</h1>
+          <ion-label>No internet Connection found</ion-label> <br>
+          <ion-label>Checkout your connection</ion-label>
+
+
+          <ion-button expand="block" (click)="checkingNetworkStatus()" fill="outline" class="retry-button">
+            Try Again
+          </ion-button>
+
+        </div>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

@@ -1,0 +1,41 @@
+<ion-app [dir]="rtlSide">
+	<ion-split-pane contentId="main-content">
+		<ion-menu contentId="main-content" type="overlay">
+			<div class="profile_box">
+				<h2>
+					{{"hey" | translate}},
+					<span class="first_name">Samantha</span>
+					<span class="last_name">Smith</span>
+				</h2>
+			</div>
+			<ion-content fullscreen>
+				<ion-list lines="none">
+					<ion-menu-toggle auto-hide="false" *ngFor="let p of appPages">
+						<ion-item mode="ios" detail="false" [routerDirection]="'root'"   [routerLink]="[p.url]">
+							<div class="item_inner d-flex">
+								<ion-icon slot="start" [class]="p.icon"></ion-icon>
+								<h2>{{ p.title | translate}}</h2>
+							</div>
+						</ion-item>
+					</ion-menu-toggle>
+					<ion-menu-toggle auto-hide="false">
+						<ion-item mode="ios" detail="false" (click)="onLogout()">
+						  <div class="item_inner d-flex">
+							<ion-icon slot="start" class="zmdi zmdi-open-in-new"></ion-icon>
+							<h2>Log out</h2>
+						</div>
+						</ion-item>
+					  </ion-menu-toggle>
+
+					<div class="buy_this_app" *ngIf="config.showBuyPromt" (click)="buyAppAction()">
+						<h2>
+							<ion-icon class="zmdi zmdi-shopping-cart"></ion-icon>
+							{{"buy_this_app" | translate}}
+						</h2>
+					</div>
+				</ion-list>
+			</ion-content>
+		</ion-menu>
+		<ion-router-outlet id="main-content"></ion-router-outlet>
+	</ion-split-pane>
+</ion-app>

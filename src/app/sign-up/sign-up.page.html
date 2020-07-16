@@ -1,0 +1,68 @@
+<ion-header>
+	<ion-toolbar>
+		<ion-buttons slot="start">
+			<ion-back-button text="" icon="chevron-back-outline"></ion-back-button>
+		</ion-buttons>
+		<ion-title>{{'register' | translate}}</ion-title>
+	</ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+	<form [formGroup]="registerForm">
+	<div class="form">
+		<ion-list lines="none">
+			<ion-item lines="none">
+				<ion-label mode="md" position="stacked">Fullname</ion-label>
+				<ion-input mode="md" type="text" formControlName="fullname" required fullname placeholder="Enter Your Fullname"></ion-input>
+			</ion-item>
+			<ion-item lines="none" *ngIf="!registerForm.get('fullname').value && registerForm.get('fullname').touched">
+				<ion-badge color="danger">*This field is required</ion-badge>
+			</ion-item>
+
+			<ion-item lines="none">
+				<ion-label mode="md" position="stacked">Email</ion-label>
+				<ion-input mode="md" type="email" formControlName="email" required email placeholder="Please Enter Your Email"></ion-input>
+			</ion-item>
+			<ion-item lines="none" *ngIf="!registerForm.get('email').value && registerForm.get('email').touched">
+				<ion-badge color="danger">*This field is required</ion-badge>
+			</ion-item>
+			<ion-item lines="none" *ngIf="registerForm.get('email').value && registerForm.get('email').touched && !registerForm.get('email').valid && !registerForm.get('email').hasError('invalid_email')"> 
+				<ion-badge color="danger">*Invalid email format</ion-badge>
+			  </ion-item>
+
+			  <ion-item lines="none" *ngIf="registerForm.get('email').value && registerForm.get('email').hasError('invalid_email')">
+				<ion-badge color="danger">*This email already exist.</ion-badge>
+			  </ion-item>
+
+			<ion-item lines="none">
+				<ion-label mode="md" position="stacked">Phone Number</ion-label>
+				<ion-input mode="md" type="text" formControlName="phoneno" required placeholder="Please enter your phone number"></ion-input>
+			</ion-item>
+			<ion-item lines="none" *ngIf="!registerForm.get('phoneno').value && registerForm.get('phoneno').touched">
+				<ion-badge color="danger">This field is required.</ion-badge>
+			</ion-item>
+			<ion-item lines="none" *ngIf="registerForm.get('phoneno').value && registerForm.get('phoneno').hasError('invalid_phonene')">
+				<ion-badge color="danger">*This email already exist.</ion-badge>
+			</ion-item>
+			<ion-item lines="none" *ngIf="registerForm.get('phoneno').value && registerForm.get('phoneno').touched && !registerForm.get('phoneno').valid">
+				<ion-badge color="danger">*Invalid format</ion-badge>
+			</ion-item>
+
+			<ion-item lines="none">
+				<ion-label mode="md" position="stacked">Password</ion-label>
+				<ion-input mode="md" type="password" formControlName="password" required placeholder="Please enter your password"></ion-input>
+			</ion-item>
+			<ion-item lines="none" *ngIf="!registerForm.get('password').value && registerForm.get('password').touched"> 
+				<ion-badge color="danger">This field is required.</ion-badge>
+			</ion-item>
+
+		</ion-list>
+		<ion-button size="large" type="submit" [disabled]="!registerForm.valid" expand="full" class="btn" (click)="onSubmit()">Submit</ion-button>
+	</div>
+	</form>
+</ion-content>
+
+<ion-footer class="ion-mo-border">
+		
+</ion-footer>

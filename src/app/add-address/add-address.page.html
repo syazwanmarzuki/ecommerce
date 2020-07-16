@@ -1,0 +1,23 @@
+<ion-header>
+	<ion-toolbar>
+		<ion-buttons slot="start">
+			<ion-back-button text="" icon="chevron-back-outline"></ion-back-button>
+		</ion-buttons>
+		<ion-title>
+			<div class="title_inner d-flex">
+				<span>	{{"add_address" | translate}}</span>
+				
+				<ion-button class="btn end">
+					{{"continue" | translate}}
+				</ion-button>
+			</div>
+		</ion-title>
+	</ion-toolbar>
+</ion-header>
+
+<ion-content class="bg_color">
+	<div class="map" (click)="title()">
+		<img src="assets/images/map.png">
+		<ion-icon class="zmdi zmdi-pin" style="top:38%; right: 50%;"></ion-icon>
+	</div>
+</ion-content>

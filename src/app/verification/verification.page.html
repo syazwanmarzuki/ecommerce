@@ -1,0 +1,24 @@
+<ion-header>
+	<ion-toolbar>
+		<ion-buttons slot="start">
+			<ion-back-button text="" icon="chevron-back-outline"></ion-back-button>
+		</ion-buttons>
+		<ion-title>{{'verification' | translate}}</ion-title>
+	</ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+	<div class="form">
+		<p class="ion-text-center">{{'verification_text1' | translate}}<br>{{'verification_text2' | translate}}</p>
+		<ion-list lines="none">
+			<ion-item lines="none">
+				<ion-label mode="md" position="stacked">{{"enter_verification_code" | translate}}</ion-label>
+				<ion-input mode="md" type="number" placeholder="{{'enter_verification_code' | translate}}"></ion-input>
+			</ion-item>
+		</ion-list>
+	</div>
+</ion-content>
+<ion-footer class="ion-mo-border">
+	<ion-button size="large" expand="full" class="btn" (click)="home()">{{'verify' | translate}}</ion-button>
+</ion-footer>
