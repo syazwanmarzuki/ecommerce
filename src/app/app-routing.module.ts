@@ -132,6 +132,10 @@ const routes: Routes = [
   {
     path: 'network-error',
     loadChildren: () => import('./network-error/network-error.module').then( m => m.NetworkErrorPageModule)
+  },
+  {
+    path: 'forgot-password',
+    loadChildren: () => import('./forgot-password/forgot-password.module').then( m => m.ForgotPasswordPageModule)
   }
 ];
 

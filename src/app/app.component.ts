@@ -5,11 +5,15 @@ import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AuthService } from './auth/auth.service';
 
+
 import { TranslateService } from '@ngx-translate/core';
 import { MyEvent } from 'src/services/myevent.services';
 import { Constants } from 'src/models/contants.models';
 import { APP_CONFIG, AppConfig } from './app.config';
 import { Subscription } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+
+import { environment } from '../environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -20,6 +24,9 @@ export class AppComponent implements OnInit, OnDestroy {
   private authSub : Subscription;
   private previousAuthState = false;
   rtlSide = "left";
+
+  fullname = '';
+
   public selectedIndex = 0;
   public appPages = [
     {
@@ -65,15 +72,20 @@ export class AppComponent implements OnInit, OnDestroy {
 
   constructor(
     @Inject(APP_CONFIG) public config: AppConfig,
-    private platform: Platform, private navCtrl: NavController,
+    private platform: Platform,
+    private navCtrl: NavController,
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
     private authService : AuthService,
-    private translate: TranslateService, private myEvent: MyEvent) {
-    this.initializeApp();
-    this.myEvent.getLanguageObservable().subscribe(value => {
+    private translate: TranslateService,
+    private http : HttpClient,
+    private myEvent: MyEvent
+    ) {
+      this.initializeApp();
+      this.myEvent.getLanguageObservable().subscribe(value => {
       this.navCtrl.navigateRoot(['./']);
       this.globalize(value);
+      this.initializeApp();
     });
   }
   ngOnDestroy(): void {
@@ -119,6 +131,7 @@ export class AppComponent implements OnInit, OnDestroy {
     if (path !== undefined) {
       this.selectedIndex = this.appPages.findIndex(page => page.title.toLowerCase() === path.toLowerCase());
     }
+    
 
     this.authService.UserIsAuthenticated.subscribe(isAuth => {
       if(!isAuth && this.previousAuthState !== isAuth){
@@ -126,6 +139,10 @@ export class AppComponent implements OnInit, OnDestroy {
       }
 
       this.previousAuthState = isAuth;
+    })
+
+    this.authService.userFullname.subscribe(fullname => {
+      this.fullname = fullname;
     })
   }
 }

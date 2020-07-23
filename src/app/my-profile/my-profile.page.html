@@ -4,44 +4,58 @@
 			<ion-menu-button></ion-menu-button>
 		</ion-buttons>
 		<ion-title>
-			{{'my_account' | translate}}
+			My Account
 		</ion-title>
 	</ion-toolbar>
 </ion-header>
 
 <ion-content class="bg_color">
 	<ion-card>
-		<div class="form">
-			<h2>{{'my_profile' | translate}}</h2>
+		<ion-card-header>
+		  <ion-card-title>My Profile</ion-card-title>
+		</ion-card-header>
+	  
+		<ion-card-content>
 			<ion-list lines="none">
 				<ion-item lines="none">
-					<ion-label mode="md" position="stacked">{{"full_name" | translate}}</ion-label>
-					<ion-input mode="md" type="name" value="Samantha Smith" readonly="true"></ion-input>
+					<ion-label mode="md" position="stacked">User ID</ion-label>
+					<ion-badge color="warning">{{user_id}}</ion-badge>
+				</ion-item>
+				<ion-item lines="none">
+					<ion-label mode="md" position="stacked">Fullname</ion-label>
+					<ion-input mode="md" type="name" value="{{userFullname}}"></ion-input>
 				</ion-item>
 
 				<ion-item lines="none">
 					<ion-label mode="md" position="stacked">{{"email_address" | translate}}</ion-label>
-					<ion-input mode="md" type="email" value="samanthasmith@mail.com" readonly="true"></ion-input>
+					<ion-input mode="md" type="email" value="{{email}}" readonly="true"></ion-input>
 				</ion-item>
 
 				<ion-item lines="none">
 					<ion-label mode="md" position="stacked">{{"phone_number" | translate}}</ion-label>
-					<ion-input mode="md" type="text" value="+1 987 654 3210" readonly="true"></ion-input>
+					<ion-input mode="md" type="text" value="{{phoneno}}" readonly="true"></ion-input>
 				</ion-item>
 
 			</ion-list>
-		</div>
-	</ion-card>
-	<ion-card class="my_addresses">
-		<div class="form">
-			<h2>{{'my_addresses' | translate}}</h2>
+			<ion-button expand="block" (click)="openModal(1)">
+				<ion-icon slot="start" name="pencil"></ion-icon>
+				Edit Profile
+			</ion-button>
+		</ion-card-content>
+	  </ion-card>
+	<ion-card>
+		<ion-card-header>
+		  <ion-card-title>My Addresses</ion-card-title>
+		</ion-card-header>
+	  
+		<ion-card-content>
 			<ion-list lines="none">
 				<ion-item>
 					<div class="item_inner"> 
 						<div class="text_box">
-							<h3 class="d-flex">Home <ion-icon class="zmdi zmdi-edit ion-text-end end"></ion-icon></h3>
+							<ion-badge color="secondary">Home</ion-badge>
 							<p>
-								1124, Patestine Street, Jackson Tower, Near City Garden, New York, USA
+								{{home_address}}
 							</p>
 						</div>
 					</div>
@@ -49,9 +63,9 @@
 				<ion-item>
 					<div class="item_inner"> 
 						<div class="text_box">
-							<h3 class="d-flex">Office <ion-icon class="zmdi zmdi-edit ion-text-end end"></ion-icon></h3>
+							<ion-badge color="secondary">Office</ion-badge>
 							<p>
-								1124, Patestine Street, Jackson Tower, Near City Garden, New York, USA
+								{{office_address}}
 							</p>
 						</div>
 					</div>
@@ -59,17 +73,18 @@
 				<ion-item>
 					<div class="item_inner"> 
 						<div class="text_box">
-							<h3 class="d-flex">Other <ion-icon class="zmdi zmdi-edit ion-text-end end"></ion-icon></h3>
+							<ion-badge color="secondary">Other</ion-badge>
 							<p>
-								1124, Patestine Street, Jackson Tower, Near City Garden, New York, USA
+								{{other_address}}
 							</p>
 						</div>
 					</div>
 				</ion-item>
 			</ion-list>
-		</div>
-	</ion-card>
+			<ion-button expand="block" (click)="openModal(2)">
+				<ion-icon slot="start" name="pencil"></ion-icon>
+				Edit Addresses
+			</ion-button>
+		</ion-card-content>
+	  </ion-card>
 </ion-content>
-<ion-footer class="ion-no-border">
-	<ion-button size="large" shape="full" class="btn" (click)="add_address()"> {{'add_address' | translate}} </ion-button>
-</ion-footer>

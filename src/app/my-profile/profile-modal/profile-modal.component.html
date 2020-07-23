@@ -1,0 +1,181 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      {{ page_title }}
+    </ion-title>
+    <ion-buttons slot="primary"> 
+      <ion-button (click)="closeModal()">
+        <ion-icon name="close-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-card *ngIf="category == 1 && !isLoading">
+    <ion-card-header>
+      <ion-card-title>Card Title</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <form [formGroup]="myProfile">
+
+        <ion-item>
+          <ion-label position="stacked">
+            Fullname (As in NRIC) *
+          </ion-label>
+          <ion-input type="text" formControlName="fullname"></ion-input>
+        </ion-item>
+        
+        <ion-item lines="none" *ngIf="!myProfile.get('fullname').value && myProfile.get('fullname').touched">
+          <small class="error-message">This field is required.</small>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="stacked">
+            Email *
+          </ion-label>
+          <ion-input type="email" formControlName="email" email></ion-input>
+        </ion-item>
+
+
+        <ion-item>
+          <ion-label position="stacked">
+            Phone Number
+          </ion-label>
+          <ion-input type="number" formControlName="phoneno"></ion-input>
+        </ion-item>
+        <ion-item lines="none" *ngIf="myProfile.get('phoneno').value && myProfile.get('phoneno').touched && !myProfile.get('phoneno').valid">
+          <small class="error-message">You have not given a correct phone number.</small>
+        </ion-item>
+      </form>
+    </ion-card-content>
+  </ion-card>
+  <ion-card *ngIf="category == 2 && !isLoading">
+    <ion-card-header>
+      <ion-card-title>Card Title</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <form [formGroup]="myAddresses">
+        <ion-item>
+            <ion-label position="stacked">
+              Home Address
+            </ion-label>
+            <ion-input type="text" formControlName="home_address"></ion-input>
+        </ion-item>
+
+        <ion-item lines="none" *ngIf="!myAddresses.get('home_address').value && myAddresses.get('home_address').touched">
+          <small class="error-message">This field is required.</small>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="stacked">
+            Office Address
+          </ion-label>
+          <ion-input type="text" formControlName="office_address"></ion-input>
+        </ion-item>
+
+        <ion-item lines="none" *ngIf="!myAddresses.get('office_address').value && myAddresses.get('office_address').touched">
+          <small class="error-message">This field is required.</small>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="stacked">
+            Other Address
+          </ion-label>
+          <ion-input type="text" formControlName="other_address"></ion-input>
+        </ion-item>
+
+        <ion-item lines="none" *ngIf="!myAddresses.get('other_address').value && myAddresses.get('other_address').touched">
+          <small class="error-message">This field is required.</small>
+        </ion-item>
+      </form>
+    </ion-card-content>
+  </ion-card>
+  <ion-grid>
+    <ion-row>
+      <!-- <ion-col size-md="12" offset-md="0" size-sm="6" offset-sm="3" *ngIf="category == 1 && !isLoading">
+        <form [formGroup]="myProfile">
+
+          <ion-item>
+            <ion-label position="stacked">
+              Fullname (As in NRIC) *
+            </ion-label>
+            <ion-input type="text" formControlName="fullname"></ion-input>
+          </ion-item>
+          
+          <ion-item lines="none" *ngIf="!myProfile.get('fullname').value && myProfile.get('fullname').touched">
+            <small class="error-message">This field is required.</small>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="stacked">
+              Email *
+            </ion-label>
+            <ion-input type="email" formControlName="email" email readonly></ion-input>
+          </ion-item>
+
+
+          <ion-item>
+            <ion-label position="stacked">
+              Phone Number
+            </ion-label>
+            <ion-input type="number" formControlName="phoneno" readonly></ion-input>
+          </ion-item>
+          <ion-item lines="none" *ngIf="myProfile.get('phoneno').value && myProfile.get('phoneno').touched && !myProfile.get('phoneno').valid">
+            <small class="error-message">You have not given a correct phone number.</small>
+          </ion-item>
+
+        </form>
+      </ion-col> -->
+
+      <!-- <ion-col size-md="12" offset-md="0" size-sm="6" offset-sm="3" *ngIf="category == 2 && !isLoading">
+        <form [formGroup]="myAddresses">
+          <ion-item>
+              <ion-label position="stacked">
+                Home Address
+              </ion-label>
+              <ion-input type="text" formControlName="home_address"></ion-input>
+          </ion-item>
+
+          <ion-item lines="none" *ngIf="!myAddresses.get('home_address').value && myAddresses.get('home_address').touched">
+            <small class="error-message">This field is required.</small>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="stacked">
+              Office Address
+            </ion-label>
+            <ion-input type="text" formControlName="office_address"></ion-input>
+          </ion-item>
+
+          <ion-item lines="none" *ngIf="!myAddresses.get('office_address').value && myAddresses.get('office_address').touched">
+            <small class="error-message">This field is required.</small>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="stacked">
+              Other Address
+            </ion-label>
+            <ion-input type="text" formControlName="other_address"></ion-input>
+          </ion-item>
+
+          <ion-item lines="none" *ngIf="!myAddresses.get('other_address').value && myAddresses.get('other_address').touched">
+            <small class="error-message">This field is required.</small>
+          </ion-item>
+        </form>
+      </ion-col> -->
+
+    </ion-row>
+
+    <ion-row *ngIf="!isLoading">
+      <ion-col size-md="12" offset-md="0" size-sm="6" offset-sm="3">
+        <ion-button class="submitButton" expand="block" fill="outline" (click)="onSave(category)" >Save</ion-button>
+      </ion-col>
+    </ion-row>
+
+
+  </ion-grid>
+</ion-content>

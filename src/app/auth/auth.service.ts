@@ -4,11 +4,11 @@ import { BehaviorSubject, from } from 'rxjs';
 import { AlertController, BooleanValueAccessor } from '@ionic/angular';
 import { User } from './user.model';
 import { Plugins } from '@capacitor/core';
-import { tap, map } from 'rxjs/operators';
+import { tap, map, take, switchMap } from 'rxjs/operators';
 import { stringify } from 'querystring';
 
-
 export interface authResponseData{
+  register_date: string;
   user_id : string;
   email : string;
   valid : boolean;
@@ -18,19 +18,29 @@ export interface authResponseData{
   phoneno : string;
 }
 
+
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
   private _url : string = "http://ecommerce.x-cow.com/api/action.php";
   private _user = new BehaviorSubject<User>(null);
- 
-
 
   constructor(
     private http : HttpClient,
     private alertCtrl : AlertController
   ) { }
+
+  get userFullname() {
+    return this._user.asObservable().pipe(map(user => {
+      if (user){
+        return user.fullname;
+      }
+      else{
+        return null;
+      }
+    }))
+  }
 
   register(data : any){
     let formData = new FormData();
@@ -71,19 +81,19 @@ export class AuthService {
         }
 
         const parsedData = JSON.parse(storeData.value) as {
-          fullname :string;
           user_id : string;
+          email :string;
+          fullname : string;
           session_id : string;
-          email : string;
           phoneno : string;
         };
 
         this.getUserDetail(parsedData.user_id, parsedData.session_id, parsedData.email);
 
         const user = new User(
-          parsedData.fullname,
           parsedData.user_id,
-          parsedData.email,
+          parsedData.email, 
+          parsedData.fullname,
           parsedData.session_id,
           parsedData.phoneno
         );
@@ -99,17 +109,17 @@ export class AuthService {
     )
   }
 
-  getUserDetail(email : string, session_id : string, user_id : string){
+  getUserDetail(user_id : string, session_id : string, email : string){
     let formData = new FormData();
     formData.append('action', 'getUserDetail');
     formData.append('email', email);
 
-    this.http.post<{fullname : string, phoneno : string}>(
+    this.http.post<{user_id : string, email : string, fullname : string, phoneno : string}>(
       this._url,
       formData
     ).subscribe(resData => {
-      this.setUserData(email, user_id, session_id, resData.fullname, resData.phoneno);
-
+      
+      this.setUserData(user_id, email, session_id, resData.fullname, resData.phoneno);
     });
   }
 
@@ -126,13 +136,13 @@ export class AuthService {
   }
 
 
-  setUserData(user_id : string, fullname : string, email : string, session_id : string, phoneno : string){
-    this._user.next(new User(user_id, fullname, email, session_id, phoneno));
-    this.storeAuthData(user_id, fullname, email, session_id, phoneno);
+  setUserData(user_id : string, email : string, fullname : string, session_id : string, phoneno : string){
+    this._user.next(new User(user_id, email, fullname, session_id, phoneno));
+    this.storeAuthData(user_id, email, fullname, session_id, phoneno);
   }
 
-  storeAuthData(user_id : string, fullname : string, email : string, session_id : string, phoneno : string){
-    const data = JSON.stringify({ user_id : user_id, fullname : fullname, email : email, session_id : session_id, phoneno : phoneno});
+  storeAuthData(user_id : string, email : string, fullname : string, session_id : string, phoneno : string){
+    const data = JSON.stringify({ user_id : user_id, email : email, fullname : fullname,  session_id : session_id, phoneno : phoneno});
     Plugins.Storage.set({
       key:'authData', value: data
     })
@@ -142,4 +152,34 @@ export class AuthService {
     this._user.next(null);
     Plugins.Storage.remove({key: 'authData'});
   }
+
+  resetPassword(email : string) {
+    let formData = new FormData();
+    formData.append("action", "resetPassword");
+    formData.append("email", email);
+
+    return this.http.post<authResponseData>(
+      this._url,
+      formData
+    ).pipe(tap(resData => {
+      if (resData.valid){
+        this.setUserData(resData.user_id, resData.email, resData.fullname, resData.session_id, resData.phoneno);
+      }
+      
+    }));
+  }
+
+  get userId(){
+    return this._user.asObservable().pipe(map(user => {
+      if (user){
+        return user.user_id;
+      }
+      else{
+        return null;
+      }
+    }))
+  }
+
+  
+
 }

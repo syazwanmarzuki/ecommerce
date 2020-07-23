@@ -109,6 +109,10 @@ export class SignInPage implements OnInit {
     const email = form.value.email;
     const password = form.value.password;
 
+    console.log(email);
+    console.log(password);
+    
+    
     this.loadedCtrl.create({
       keyboardClose: true,
       message : 'Please wait...'
